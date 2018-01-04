@@ -4,6 +4,6 @@ See doc/readme-qt.rst for instructions on building BlackCoin QT,
 the intended-for-end-users, nice-graphical-interface, reference
 implementation of BlackCoin.
 
-See doc/build-*.txt for instructions on building karacoind,
+See doc/build-*.txt for instructions on building blackcoind,
 the intended-for-services, no-graphical-interface, reference
 implementation of BlackCoin.
