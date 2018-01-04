@@ -52,9 +52,9 @@ public:
         pchMessageStart[1] = 0x35;
         pchMessageStart[2] = 0x22;
         pchMessageStart[3] = 0x05;
-        vAlertPubKey = ParseHex("0486bce1bac0d543f104cbff2bd23680056a3b9ea05e1137d2ff90eeb5e08472eb500322593a2cb06fbf8297d7beb6cd30cb90f98153b5b7cce1493749e41e0284");
-        nDefaultPort = 15714;
-        nRPCPort = 15715;
+        vAlertPubKey = ParseHex("048d418b16a933126aaeaa54c10715f13540d3666d8baacd161a3e6e974f25b58d5cfc322642e3f2bdb6b08ede471c964e7facab9a04473335b6ed88401e69d914");
+        nDefaultPort = 2783;
+        nRPCPort = 3340;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20);
 
         // Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -65,25 +65,44 @@ public:
         //    CTxIn(COutPoint(0000000000, 4294967295), coinbase 00012a24323020466562203230313420426974636f696e2041544d7320636f6d6520746f20555341)
         //    CTxOut(empty)
         //  vMerkleTree: 12630d16a9
-        const char* pszTimestamp = "20 Feb 2014 Bitcoin ATMs come to USA";
+        const char* pszTimestamp = "Japan 04/Jan/2017 Happy Birth Day";
         std::vector<CTxIn> vin;
         vin.resize(1);
         vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         std::vector<CTxOut> vout;
         vout.resize(1);
         vout[0].SetEmpty();
-        CTransaction txNew(1, 1393221600, vin, vout, 0);
+        CTransaction txNew(1, 1514991600, vin, vout, 0);
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1393221600;
+        genesis.nTime    = 1514991600;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce   = 164482;
+        genesis.nNonce   = 336653636;
 
+        /*
+        // create genesis block
+        
+        uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
+        
+        while (genesis.GetHash() > hashTarget)
+        {
+            ++genesis.nNonce;
+            if (genesis.nNonce == 0) {
+                ++genesis.nTime;
+            }
+        }
+        
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x000001faef25dec4fbcf906e6242621df2c183bf232f263d0ba5b101911e4563"));
-        assert(genesis.hashMerkleRoot == uint256("0x12630d16a97f24b287c8c2594dda5fb98c9e6c70fc61d44191931ea2aa08dc90"));
+        LogPrintf("hashTarget = %u\n", hashTarget.ToString());
+        LogPrintf("Nonce = %u\n", genesis.nNonce);
+        LogPrintf("Hash = %s\n", hashGenesisBlock.ToString() );
+        LogPrintf("MerkleRoot = %s\n", genesis.hashMerkleRoot.ToString() );
+        */
+        hashGenesisBlock = genesis.GetHash();
+        assert(hashGenesisBlock == uint256("0x000001717934d996a3389a8701dc62359bdd5b5630a7ccbcddce3a77c2197f9e"));
+        assert(genesis.hashMerkleRoot == uint256("0x4ba2243b623868dbfb0968ada3903dc05ed0d32b97421211ce7855265e198ec2"));
 
         vSeeds.push_back(CDNSSeedData("vasin.nl", "dnsseed.vasin.nl"));
         vSeeds.push_back(CDNSSeedData("vps.joshuajbouw.com", "dnsseed.joshuajbouw.com"));
@@ -96,7 +115,7 @@ public:
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
-        nLastPOWBlock = 10000;
+        nLastPOWBlock = 278300;
     }
 
     virtual const CBlock& GenesisBlock() const { return genesis; }
@@ -127,16 +146,16 @@ public:
         pchMessageStart[2] = 0xc0;
         pchMessageStart[3] = 0xef;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
-        vAlertPubKey = ParseHex("0471dc165db490094d35cde15b1f5d755fa6ad6f2b5ed0f340e3f17f57389c3c2af113a8cbcc885bde73305a553b5640c83021128008ddf882e856336269080496");
-        nDefaultPort = 25714;
-        nRPCPort = 25715;
+        vAlertPubKey = ParseHex("048d418b16a933126aaeaa54c10715f13540d3666d8baacd161a3e6e974f25b58d5cfc322642e3f2bdb6b08ede471c964e7facab9a04473335b6ed88401e69d914");
+        nDefaultPort = 40298;
+        nRPCPort = 43044;
         strDataDir = "testnet";
 
         // Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce = 216178;
+        genesis.nNonce = 270503;
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x0000724595fb3b9609d441cbfb9577615c292abf07d996d3edabc48de843642d"));
+        assert(hashGenesisBlock == uint256("0x000092dab888ae68d7e25e7bcd8d6cee1ce588f9459c5aa8de88fe401c90a1c6"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -169,11 +188,11 @@ public:
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 1);
         genesis.nTime = 1411111111;
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce = 2;
+        genesis.nNonce = 5;
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 18444;
         strDataDir = "regtest";
-        assert(hashGenesisBlock == uint256("0x523dda6d336047722cbaf1c5dce622298af791bac21b33bf6e2d5048b2a13e3d"));
+        assert(hashGenesisBlock == uint256("0x360295b9682f118dc41de854d4f96b3cecac2e1022e521f8b2333d33fcb98f30"));
 
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.
     }
@@ -223,3 +242,4 @@ bool SelectParamsFromCommandLine() {
     }
     return true;
 }
+
