@@ -1,12 +1,12 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=BlackCoin
-Comment=BlackCoin P2P Cryptocurrency
-Comment[fr]=BlackCoin, monnaie virtuelle cryptographique pair à pair
-Comment[tr]=BlackCoin, eşten eşe kriptografik sanal para birimi
-Exec=/usr/bin/blackcoin-qt
+Name=KaraCoin
+Comment=KaraCoin P2P Cryptocurrency
+Comment[fr]=KaraCoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=KaraCoin, eşten eşe kriptografik sanal para birimi
+Exec=/usr/bin/karacoin-qt
 Terminal=false
 Type=Application
 Icon=/usr/share/pixmaps/bitcoin80.xpm
-MimeType=x-scheme-handler/blackcoin;
+MimeType=x-scheme-handler/karacoin;
 Categories=Office;

@@ -1,6 +1,6 @@
 [Protocol]
-exec=blackcoin-qt '%u'
-protocol=blackcoin
+exec=karacoin-qt '%u'
+protocol=karacoin
 input=none
 output=none
 helper=true

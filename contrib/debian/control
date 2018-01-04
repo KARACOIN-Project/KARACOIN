@@ -1,4 +1,4 @@
-Source: blackcoin
+Source: karacoin
 Section: utils
 Priority: optional
 Maintainer: Jonas Smedegaard <dr@jones.dk>
@@ -19,11 +19,11 @@ Build-Depends: debhelper,
  libqt4-dev,
  libqrencode-dev
 Standards-Version: 3.9.2
-Homepage: http://www.blackcoin.co/
-Vcs-Git: git://github.com/CoinBlack/blackcoin.git
-Vcs-Browser: http://github.com/CoinBlack/blackcoin
+Homepage: http://www.karacoin.co/
+Vcs-Git: git://github.com/CoinBlack/karacoin.git
+Vcs-Browser: http://github.com/CoinBlack/karacoin
 
-Package: blackcoind
+Package: karacoind
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
@@ -38,10 +38,10 @@ Description: peer-to-peer network based digital currency - daemon
  Full transaction history is stored locally at each client.  This
  requires 2+ GB of space, slowly growing.
  .
- This package provides blackcoind, a combined daemon and CLI tool to
+ This package provides karacoind, a combined daemon and CLI tool to
  interact with the daemon.
 
-Package: blackcoin-qt
+Package: karacoin-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
