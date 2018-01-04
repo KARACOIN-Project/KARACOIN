@@ -105,12 +105,12 @@ public:
         assert(genesis.hashMerkleRoot == uint256("0x4ba2243b623868dbfb0968ada3903dc05ed0d32b97421211ce7855265e198ec2"));
 
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 25);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 85);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1, 153);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 45);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 123);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1, 128);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
-
+        
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
         nLastPOWBlock = 278300;
@@ -158,7 +158,7 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 111);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 108);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 196);
         base58Prefixes[SECRET_KEY]     = std::vector<unsigned char>(1, 239);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
