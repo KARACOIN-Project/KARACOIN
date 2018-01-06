@@ -64,7 +64,8 @@ Boost
 DOS prompt:
 downloaded boost jam 3.1.18
 cd \boost-1.47.0-mgw
-bjam toolset=gcc --build-type=complete stage
+./bootstrap.sh
+./b2
 
 MiniUPnPc
 ---------
